@@ -13,7 +13,7 @@ export default function About() {
       </div>
       <div className="flex flex-col gap-12 lg:flex-row py-8 px-12 items-center font-sans">
         <img
-          src="/scott.jpg"
+          src="/scott-2.png"
           width="400"
           height="400"
           alt="Photo of Scott Daly"

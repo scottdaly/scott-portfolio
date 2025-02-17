@@ -5,8 +5,7 @@ export default function AdsPage() {
     <div className="flex flex-col w-full font-sans bg-[#f0f1dc]">
       <div className="flex flex-col w-full min-h-screen gap-4 text-center px-8 mt-32 md:mt-64">
         <h3 className="text-lg md:text-xl">
-          Before I moved over to UX & Product Design, I worked as an Art Director in
-          Advertising.
+          Before I moved over to UX & Product Design, I worked as an Advertising Art Director.
         </h3>
         <h2 className="text-3xl md:text-5xl">
           I&apos;ve worked at agencies including
