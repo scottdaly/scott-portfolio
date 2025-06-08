@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom'
 
 export default function AdsPage() {
   return (
-    <div className="flex flex-col w-full font-sans bg-[#f0f1dc]">
-      <div className="flex flex-col w-full min-h-screen gap-4 text-center px-8 mt-32 md:mt-64">
-        <h3 className="text-lg md:text-xl">
-          Before I moved over to UX & Product Design, I worked as an Advertising Art Director.
+    <div className="flex flex-col w-full font-sans">
+      <div className="flex flex-col w-full min-h-screen gap-2 md:gap-4 text-start md:text-center px-8 mt-24 md:mt-36">
+        <h3 className="md:text-xl text-balance">
+          At the start of my career, I worked as an Advertising Art Director.
         </h3>
-        <h2 className="text-3xl md:text-5xl">
+        <h2 className="text-3xl md:text-5xl text-balance">
           I&apos;ve worked at agencies including
         </h2>
-        <div className="flex flex-wrap w-full gap-4 md:gap-5 text-3xl md:text-5xl py-4 justify-center">
+        <div className="flex flex-wrap w-full gap-3 md:gap-5 text-3xl md:text-5xl py-4 justify-center">
           <Link to="https://www.bssp.com/">
             <div className="flex items-center justify-center gap-2 md:gap-4">
               <img

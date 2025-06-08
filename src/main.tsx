@@ -15,7 +15,7 @@ import Footer from './components/Footer.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-    <div className="anton-font">
+    <div className="w-full mx-auto bg-light">
     <Header />
       <Routes>
         <Route path="/" element={<App />} />

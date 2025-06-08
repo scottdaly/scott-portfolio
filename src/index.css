@@ -19,20 +19,86 @@
   }
 }
 
+@theme {
+  --color-dark: #111111;
+  --color-light: #e0e0dc;
+  --color-godaddy-bg: white;
+  --color-prepro-bg: #253157;
+  --color-prepro-text: white;
+  --color-hallpass-bg: #f0f1dc;
+  --color-hallpass-text: #111111;
+}
+
 .balance-text {
   text-wrap: balance;
 }
 
-.lora-font {
-  font-family: "Lora", serif;
+.eb-garamond-regular {
+  font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
-
+  font-weight: 400;
   font-style: normal;
 }
 
-.anton-font {
-  font-family: "Anton", sans-serif;
+.eb-garamond-medium {
+  font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 
+.eb-garamond-semibold {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.eb-garamond-bold {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.eb-garamond-extrabold {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.big-shoulders-regular {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.big-shoulders-medium {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.big-shoulders-bold {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.big-shoulders-extrabold {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.big-shoulders-black {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
   font-style: normal;
 }

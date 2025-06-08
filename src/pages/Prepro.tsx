@@ -1,7 +1,7 @@
 
 export default function PreproPage() {
   return (
-    <div className="flex flex-col w-full items-center bg-[#253157] text-white font-sans pt-24 md:pt-0">
+    <div className="flex flex-col w-full items-center bg-prepro-bg text-prepro-text font-sans pt-24 md:pt-0">
       <div className="flex justify-center w-full h-[640px]  md:h-[780px] mx-auto">
         <img
           src="/prepro/header.png"
