@@ -1,7 +1,8 @@
-
 export default function PreproPage() {
+  document.body.style.backgroundColor = "#1c1c1c";
+
   return (
-    <div className="flex flex-col w-full items-center bg-[#1c1c1c] text-white font-sans overflow-hidden">
+    <div className="flex flex-col w-full items-center bg-hallpass-bg text-hallpass-text font-sans overflow-hidden">
       <div className="flex justify-center w-full h-[520px] 3xl:h-[640px] mb-12">
         <img
           src="/hallpass/header-image.jpg"
@@ -211,7 +212,6 @@ export default function PreproPage() {
                 height="800"
                 alt="Featured Events"
                 className=""
-
               />
             </div>
           </div>
@@ -235,7 +235,6 @@ export default function PreproPage() {
                 height="800"
                 alt="Content Tags"
                 className=""
-
               />
             </div>
           </div>
@@ -258,7 +257,6 @@ export default function PreproPage() {
               height="400"
               alt="Room Type Selector"
               className="rounded-xl md:w-1/3 h-auto"
-
             />
           </div>
           <div className="flex flex-col gap-12 w-full items-center mx-auto mt-16">
@@ -268,7 +266,6 @@ export default function PreproPage() {
               height="1200"
               alt="Screen designs"
               className="rounded-xl"
-
             />
             <img
               src="/hallpass/screens-2.jpg"
@@ -276,7 +273,6 @@ export default function PreproPage() {
               height="1200"
               alt="Screen phone mockups"
               className="rounded-xl"
-
             />
           </div>
         </div>

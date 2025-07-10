@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default function AdsPage() {
+  document.body.style.backgroundColor = "#eae6e1";
+
   return (
-    <div className="flex flex-col w-full font-sans">
+    <div className="flex flex-col w-full font-sans bg-advertising-bg text-advertising-text">
       <div className="flex flex-col w-full min-h-screen gap-2 md:gap-4 text-start md:text-center px-8 mt-24 md:mt-36">
         <h3 className="md:text-xl text-balance">
           At the start of my career, I worked as an Advertising Art Director.
@@ -49,7 +51,6 @@ export default function AdsPage() {
                 height="100"
                 alt="BSSP"
                 className="inline"
-            
               />
               <h1 className="font-bold hover:text-teal-600 transition-all duration-300">
                 MogoSME
@@ -78,7 +79,6 @@ export default function AdsPage() {
                 height="50"
                 alt="McDonalds"
                 className="w-36"
-            
               />
             </div>
             <div className="flex items-center justify-center">
@@ -88,7 +88,6 @@ export default function AdsPage() {
                 height="50"
                 alt="Mitsubishi"
                 className="md:w-30 w-25"
-                
               />
             </div>
             <div className="flex h-50 w-50 items-center justify-center">
@@ -98,7 +97,6 @@ export default function AdsPage() {
                 height="50"
                 alt="JBL"
                 className="w-34"
-            
               />
             </div>
             <div className="flex items-center justify-center w-50">
@@ -108,7 +106,6 @@ export default function AdsPage() {
                 height="50"
                 alt="Maserati"
                 className="w-38"
-            
               />
             </div>
             <div className="flex items-center justify-center w-50">
@@ -118,7 +115,6 @@ export default function AdsPage() {
                 height="50"
                 alt="Alfa romeo"
                 className="w-34"
-                
               />
             </div>
             <div className="flex items-center justify-center w-50">
@@ -128,7 +124,6 @@ export default function AdsPage() {
                 height="50"
                 alt="Bush's Baked beans"
                 className="w-36"
-            
               />
             </div>
             <div className="flex h-50 w-50 items-center justify-center">
@@ -153,7 +148,6 @@ export default function AdsPage() {
               height="1000"
               alt="Mitsubishi"
               className="object-cover"
-            
             />
             <img
               src="/ads/mitsu-2.gif"
@@ -161,7 +155,6 @@ export default function AdsPage() {
               height="800"
               alt="Mitsubishi Social Ad"
               className="object-cover"
-            
             />
             <img
               src="/ads/raos-1.jpg"
@@ -169,7 +162,6 @@ export default function AdsPage() {
               height="1000"
               alt="Rao's Homemade OOH Ad 2"
               className="object-cover"
-            
             />
             <img
               src="/ads/raos-2.jpg"
@@ -177,7 +169,6 @@ export default function AdsPage() {
               height="1000"
               alt="Rao's Homemade OOH Ad 2"
               className="object-cover"
-            
             />
             <img
               src="/ads/raos-3.gif"
@@ -185,7 +176,6 @@ export default function AdsPage() {
               height="800"
               alt="Rao's Homemade Social Ad"
               className="object-cover"
-            
             />
           </div>
         </div>

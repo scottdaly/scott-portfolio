@@ -1,5 +1,5 @@
-
 export default function PreproPage() {
+  document.body.style.backgroundColor = "#253157";
   return (
     <div className="flex flex-col w-full items-center bg-prepro-bg text-prepro-text font-sans pt-24 md:pt-0">
       <div className="flex justify-center w-full h-[640px]  md:h-[780px] mx-auto">
