@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const darkBackgrounds = ["/prepro", "/hallpass"];
+  const darkBackgrounds = ["/prepro", "/hallpass", "/nevermade"];
 
   return (
     <div className={`absolute w-full py-8 z-50 text-black/80`}>
@@ -15,74 +15,109 @@ export default function Header() {
           <motion.div
             className={`text-3xl transition-all duration-300 big-shoulders-black uppercase cursor-pointer inline-block ${
               darkBackgrounds.includes(location.pathname)
-                ? "text-white hover:text-primary"
+                ? "text-white hover:text-primary bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-2 transition-all duration-500"
                 : "hover:text-dark-green"
             }`}
             whileHover="hover"
             initial="initial"
           >
-            {["S", "c", "o", "t", "t", " ", "D", "a", "l", "y"].map((letter, index) => (
-              <motion.span
-                key={index}
-                className="inline-block"
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut"
-                }}
-                variants={{
-                  initial: { 
-                    y: 0, 
-                    rotate: 0
-                  },
-                  hover: {
-                    y: [0, -8, 0],
-                    rotate: [0, 2, -1, 0],
-                    transition: {
-                      duration: 0.3,
-                      ease: "easeOut",
-                      y: {
-                        duration: 1.6,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.1
+            {["S", "c", "o", "t", "t", " ", "D", "a", "l", "y"].map(
+              (letter, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block"
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                  }}
+                  variants={{
+                    initial: {
+                      y: 0,
+                      rotate: 0,
+                    },
+                    hover: {
+                      y: [0, -8, 0],
+                      rotate: [0, 2, -1, 0],
+                      transition: {
+                        duration: 0.3,
+                        ease: "easeOut",
+                        y: {
+                          duration: 1.6,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: index * 0.1,
+                        },
+                        rotate: {
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: index * 0.05,
+                        },
                       },
-                      rotate: {
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.05
-                      }
-                    }
-                  }
-                }}
-              >
-                {letter === " " ? "\u00A0" : letter}
-              </motion.span>
-            ))}
+                    },
+                  }}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              )
+            )}
           </motion.div>
         </Link>
-        
+
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 font-sans text-xl hover:cursor-pointer">
-          <Link className="flex items-center justify-center w-12 text-center" to="/">
+        <div
+          className={`hidden md:flex gap-8 font-sans text-xl hover:cursor-pointer ${
+            darkBackgrounds.includes(location.pathname)
+              ? "bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+              : ""
+          }`}
+        >
+          <Link
+            className="flex items-center justify-center w-12 text-center"
+            to="/"
+          >
             <p
               className={`transition-all duration-300 ${
                 location.pathname === "/"
                   ? "text-[#1c1c1c] font-bold underline underline-offset-8"
                   : darkBackgrounds.includes(location.pathname)
-                  ? "hover:text-primary text-gray-200/90 hover:font-bold"
+                  ? "hover:text-white text-gray-200/90 hover:font-bold"
                   : "text-gray-800/90 hover:text-dark-green hover:font-bold"
               }`}
             >
               Work
             </p>
           </Link>
-          <Link className="flex items-center justify-center w-12 text-center" to="/about">
+          <Link
+            className="flex items-center justify-center w-12 text-center"
+            to="/ai"
+          >
             <p
               className={`transition-all duration-300
               ${
                 darkBackgrounds.includes(location.pathname)
-                  ? "hover:text-primary text-gray-200/90"
+                  ? "hover:text-white text-gray-200/90"
+                  : "hover:text-dark-green"
+              }
+                ${
+                  location.pathname === "/ai"
+                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-bold underline underline-offset-8"
+                    : "hover:font-bold"
+                }
+                `}
+            >
+              AI
+            </p>
+          </Link>
+          <Link
+            className="flex items-center justify-center w-12 text-center"
+            to="/about"
+          >
+            <p
+              className={`transition-all duration-300
+              ${
+                darkBackgrounds.includes(location.pathname)
+                  ? "hover:text-white text-gray-200/90"
                   : "hover:text-dark-green"
               }
                 ${
@@ -99,13 +134,29 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className={`md:hidden flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-all duration-300 ${
+            darkBackgrounds.includes(location.pathname)
+              ? "text-white bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+              : "text-black p-2"
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span
+            className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+              isMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+              isMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
+              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
         </button>
       </div>
 
@@ -162,6 +213,17 @@ export default function Header() {
                     }`}
                   >
                     Work
+                  </Link>
+                  <Link
+                    to="/ai"
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`text-2xl font-semibold ${
+                      location.pathname === "/ai"
+                        ? "text-white font-bold underline underline-offset-8"
+                        : "text-zinc-400 hover:text-dark-green"
+                    }`}
+                  >
+                    AI
                   </Link>
                   <Link
                     to="/about"

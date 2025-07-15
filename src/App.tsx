@@ -27,14 +27,14 @@ function App() {
     <main className="flex min-h-screen flex-col bg-[#e0e0dc] items-center">
       <div className="w-full max-w-[108rem] mx-auto px-4 md:px-12">
         <div
-          className={`flex flex-col w-full pt-44 md:pt-36 font-semibold font-sans text-dark`}
+          className={`flex flex-col w-full pt-24 md:pt-36 font-semibold font-sans text-dark`}
         >
           <div className="flex flex-col tracking-tighter">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black leading-[7.5rem]"
+              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black md:leading-[7.5rem]"
             >
               PRODUCT AND
             </motion.h2>
@@ -42,7 +42,7 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black"
+              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black mb-2 md:mb-0"
             >
               UX DESIGNER
             </motion.h2>
@@ -156,7 +156,7 @@ function App() {
                   viewBox="0 0 439 218"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="group-hover:scale-105 transition-transform duration-[3000ms]"
+                  className="scale-50 md:scale-100 group-hover:scale-52 md:group-hover:scale-105 transition-transform duration-[3000ms]"
                 >
                   <path
                     d="M148.8 57.8C148.8 61.1067 148.187 63.9067 146.96 66.2C145.733 68.44 144.08 70.2533 142 71.64C139.92 73.0267 137.52 74.04 134.8 74.68C132.08 75.32 129.253 75.64 126.32 75.64H119.52V97H105.84V40.36H126.64C129.733 40.36 132.613 40.68 135.28 41.32C138 41.9067 140.347 42.8933 142.32 44.28C144.347 45.6133 145.92 47.4 147.04 49.64C148.213 51.8267 148.8 54.5467 148.8 57.8ZM135.12 57.88C135.12 56.5467 134.853 55.4533 134.32 54.6C133.787 53.7467 133.067 53.08 132.16 52.6C131.253 52.12 130.213 51.8 129.04 51.64C127.92 51.48 126.747 51.4 125.52 51.4H119.52V64.76H125.28C126.56 64.76 127.787 64.6533 128.96 64.44C130.133 64.2267 131.173 63.8533 132.08 63.32C133.04 62.7867 133.787 62.0933 134.32 61.24C134.853 60.3333 135.12 59.2133 135.12 57.88ZM175.494 67.88C174.908 67.72 174.321 67.6133 173.734 67.56C173.201 67.5067 172.668 67.48 172.134 67.48C170.374 67.48 168.881 67.8 167.654 68.44C166.481 69.08 165.521 69.8533 164.774 70.76C164.081 71.6667 163.574 72.6533 163.254 73.72C162.934 74.7867 162.774 75.72 162.774 76.52V97H149.654V57.16H162.294V62.92H162.454C163.468 60.8933 164.908 59.24 166.774 57.96C168.641 56.68 170.801 56.04 173.254 56.04C173.788 56.04 174.294 56.0667 174.774 56.12C175.308 56.1733 175.734 56.2533 176.054 56.36L175.494 67.88ZM204.207 72.52C204.207 70.44 203.54 68.6533 202.207 67.16C200.927 65.6667 198.98 64.92 196.367 64.92C195.087 64.92 193.914 65.1333 192.847 65.56C191.78 65.9333 190.847 66.4667 190.047 67.16C189.247 67.8533 188.607 68.68 188.127 69.64C187.647 70.5467 187.38 71.5067 187.327 72.52H204.207ZM216.287 77.56C216.287 78.0933 216.287 78.6267 216.287 79.16C216.287 79.6933 216.26 80.2 216.207 80.68H187.327C187.434 81.8 187.754 82.8133 188.287 83.72C188.874 84.6267 189.594 85.4267 190.447 86.12C191.354 86.76 192.34 87.2667 193.407 87.64C194.527 88.0133 195.674 88.2 196.847 88.2C198.927 88.2 200.687 87.8267 202.127 87.08C203.567 86.28 204.74 85.2667 205.647 84.04L214.767 89.8C212.9 92.52 210.42 94.6267 207.327 96.12C204.287 97.56 200.74 98.28 196.687 98.28C193.7 98.28 190.874 97.8267 188.207 96.92C185.54 95.96 183.194 94.6 181.167 92.84C179.194 91.0267 177.62 88.8133 176.447 86.2C175.327 83.5867 174.767 80.6 174.767 77.24C174.767 73.9867 175.327 71.0533 176.447 68.44C177.567 65.7733 179.087 63.5333 181.007 61.72C182.927 59.8533 185.194 58.4133 187.807 57.4C190.42 56.3867 193.247 55.88 196.287 55.88C199.22 55.88 201.914 56.3867 204.367 57.4C206.82 58.36 208.927 59.7733 210.687 61.64C212.447 63.5067 213.807 65.7733 214.767 68.44C215.78 71.1067 216.287 74.1467 216.287 77.56Z"
@@ -225,7 +225,7 @@ function App() {
               </div>
             </Link>
           </div>
-          <div className="w-full rounded-xl overflow-hidden">
+          {/* <div className="w-full rounded-xl overflow-hidden">
             <Link to="/hallpass">
               <img
                 src="/hallpass/cover.jpg"
@@ -235,25 +235,24 @@ function App() {
                 className="w-full object-cover h-[500px] 3xl:h-[700px] hover:scale-105 transition-all duration-[3000ms]"
               />
             </Link>
-          </div>
+          </div> */}
           <Link to="/ads">
             <div className="w-full rounded-xl overflow-hidden relative group">
-              <div className="transition-all duration-[3000ms] hover:scale-105">
-                <img
-                  src="/ads/mitsu-outlander.jpg"
-                  width="1000"
-                  height="1000"
-                  alt="Ads Cover"
-                  className="w-full object-cover h-[500px] 3xl:h-[700px] group-hover:scale-105 transition-all duration-[3000ms]"
-                />
-              </div>
-
-              <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/50"></div>
-              <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-                <p className="text-3xl md:text-7xl text-[#f0f1dc] uppercase group-hover:scale-105 transition-all duration-[3000ms]">
+              <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/10 flex justify-center md:items-center z-10">
+                <p className="text-4xl md:text-8xl text-white font-extralight uppercase group-hover:scale-110 transition-all duration-[3000ms] max-w-[16rem] md:max-w-lg text-center mt-16 md:mt-0 big-shoulders-bold">
                   Advertising Work
                 </p>
               </div>
+
+              <img
+                src={`/ads/${
+                  windowSize.width < 800 ? "cover-mobile" : "cover"
+                }.png`}
+                width="1000"
+                height="1000"
+                alt="Ads Cover"
+                className="w-full object-cover h-[500px] 3xl:h-[700px] group-hover:scale-103 transition-all duration-[3000ms]"
+              />
             </div>
           </Link>
         </div>

@@ -6,10 +6,10 @@ export default function AdsPage() {
   return (
     <div className="flex flex-col w-full font-sans bg-advertising-bg text-advertising-text">
       <div className="flex flex-col w-full min-h-screen gap-2 md:gap-4 text-start md:text-center px-8 mt-24 md:mt-36">
-        <h3 className="md:text-xl text-balance">
-          At the start of my career, I worked as an Advertising Art Director.
+        <h3 className="md:text-xl text-balance text-center">
+          Before Product Design, I worked as an Advertising Art Director.
         </h3>
-        <h2 className="text-3xl md:text-5xl text-balance">
+        <h2 className="text-3xl md:text-5xl text-balance text-center">
           I&apos;ve worked at agencies including
         </h2>
         <div className="flex flex-wrap w-full gap-3 md:gap-5 text-3xl md:text-5xl py-4 justify-center">
@@ -41,7 +41,7 @@ export default function AdsPage() {
                 Doner,{" "}
               </h1>
             </Link>
-            <h2>and</h2>
+            <h2 className="font-extralight">and</h2>
           </div>
           <Link to="https://mogosme.com/">
             <div className="flex justify-center items-center gap-2 md:gap-4">
@@ -62,23 +62,23 @@ export default function AdsPage() {
           <h2 className="text-2xl">
             I&apos;ve worked on a variety of brands, including:
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 text-5xl py-4 mx-auto">
-            <div className="flex items-center justify-center w-50">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-12 text-5xl md:py-4 mx-auto">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/raos.jpg"
                 width="50"
                 height="50"
                 alt="Rao's Homemade"
-                className="rounded-xl w-34"
+                className="rounded-xl w-28 md:w-34"
               />
             </div>
-            <div className="flex h-50 w-50 items-center justify-center">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/mcd.png"
                 width="50"
                 height="50"
                 alt="McDonalds"
-                className="w-36"
+                className="w-30 md:w-36"
               />
             </div>
             <div className="flex items-center justify-center">
@@ -87,52 +87,52 @@ export default function AdsPage() {
                 width="50"
                 height="50"
                 alt="Mitsubishi"
-                className="md:w-30 w-25"
+                className="md:w-30 w-20"
               />
             </div>
-            <div className="flex h-50 w-50 items-center justify-center">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/jbl.png"
                 width="50"
                 height="50"
                 alt="JBL"
-                className="w-34"
+                className="w-30 md:w-34 rounded-xl"
               />
             </div>
-            <div className="flex items-center justify-center w-50">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/maserati.png"
                 width="50"
                 height="50"
                 alt="Maserati"
-                className="w-38"
+                className="w-30 md:w-38"
               />
             </div>
-            <div className="flex items-center justify-center w-50">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/alfa.png"
                 width="50"
                 height="50"
                 alt="Alfa romeo"
-                className="w-34"
+                className="w-30 md:w-34"
               />
             </div>
-            <div className="flex items-center justify-center w-50">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/bushs.png"
                 width="50"
                 height="50"
                 alt="Bush's Baked beans"
-                className="w-36"
+                className="w-28 md:w-36"
               />
             </div>
-            <div className="flex h-50 w-50 items-center justify-center">
+            <div className="flex items-center justify-center">
               <img
                 src="/ads/nathans.png"
                 width="50"
                 height="50"
                 alt="Nathans Hot Dogs"
-                className="w-40"
+                className="w-30 md:w-40"
               />
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function AdsPage() {
           <h2 className="text-2xl">
             Here&apos;s a taste of my work over the years:
           </h2>
-          <div className="flex flex-col gap-32 items-center">
+          <div className="flex flex-col gap-12 md:gap-32 items-center">
             <img
               src="/ads/mitsu-1.jpg"
               width="1000"
@@ -154,21 +154,21 @@ export default function AdsPage() {
               width="800"
               height="800"
               alt="Mitsubishi Social Ad"
-              className="object-cover"
+              className="object-cover rounded-lg"
             />
             <img
               src="/ads/raos-1.jpg"
               width="1000"
               height="1000"
               alt="Rao's Homemade OOH Ad 2"
-              className="object-cover"
+              className="object-cover rounded-lg"
             />
             <img
               src="/ads/raos-2.jpg"
               width="1000"
               height="1000"
               alt="Rao's Homemade OOH Ad 2"
-              className="object-cover"
+              className="object-cover rounded-lg"
             />
             <img
               src="/ads/raos-3.gif"

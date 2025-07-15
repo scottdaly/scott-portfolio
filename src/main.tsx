@@ -8,6 +8,8 @@ import GodaddyPro from "./pages/GodaddyPro.tsx";
 import PreproPage from "./pages/Prepro.tsx";
 import HallpassPage from "./pages/Hallpass.tsx";
 import AboutPage from "./pages/About.tsx";
+import NevermadePage from "./pages/Nevermade.tsx";
+import AIPage from "./pages/AI.tsx";
 
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
@@ -26,6 +28,8 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/ads" element={<AdsPage />} />
           <Route path="/godaddy" element={<GodaddyPro />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/ai" element={<AIPage />} />
+          <Route path="/nevermade" element={<NevermadePage />} />
         </Routes>
         <Footer />
       </div>

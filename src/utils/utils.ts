@@ -1,1 +1,1 @@
-export const darkBackgrounds = ["/prepro", "/hallpass"];
+export const darkBackgrounds = ["/prepro", "/hallpass", "/nevermade"];

@@ -1,8 +1,8 @@
 export default function PreproPage() {
   document.body.style.backgroundColor = "#253157";
   return (
-    <div className="flex flex-col w-full items-center bg-prepro-bg text-prepro-text font-sans pt-24 md:pt-0">
-      <div className="flex justify-center w-full h-[640px]  md:h-[780px] mx-auto">
+    <div className="flex flex-col w-full items-center bg-prepro-bg text-prepro-text font-sans pt-16 md:pt-0">
+      <div className="flex justify-center w-full h-[640px] md:h-[780px] mx-auto">
         <img
           src="/prepro/header.png"
           width="512"
@@ -20,7 +20,7 @@ export default function PreproPage() {
       </div>
       <div className="flex flex-col w-full md:w-[70%] mx-auto overflow-hidden">
         <div className="flex flex-col gap-12 lg:flex-row py-8 px-8 justify-center mx-auto">
-          <div className="flex flex-col gap-8 md:w-9/12">
+          <div className="flex flex-col gap-2 md:gap-8 md:w-9/12">
             <h3 className="text-lg md:text-xl font-semibold text-white/80">
               The Challenge
             </h3>
@@ -48,7 +48,7 @@ export default function PreproPage() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col py-16 md:mt-8 gap-8 px-8">
+        <div className="flex flex-col py-16 md:mt-8 gap-4 md:gap-8 px-8">
           <h3 className="text-4xl md:text-5xl font-semibold">Project Vision</h3>
           <p className="text-white/70  md:text-lg">
             We saw the disconnect between students and the availability of
@@ -65,7 +65,7 @@ export default function PreproPage() {
             opportunities that would benefit them both.
           </p>
         </div>
-        <div className="flex flex-col py-12 md:py-16 gap-8 px-8">
+        <div className="flex flex-col py-12 md:py-16 gap-4 md:gap-8 px-8">
           <h3 className="text-4xl md:text-5xl font-semibold">The Kickoff</h3>
           <p className="text-white/70  md:text-lg">
             To begin, we had to determine the use cases for both our potential
@@ -160,7 +160,7 @@ export default function PreproPage() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8 my-16 px-8">
+        <div className="flex flex-col gap-4 md:gap-8 my-16 px-8">
           <h3 className="text-5xl font-semibold">Key Path Scenarios</h3>
           <p className="text-lg font-normal text-gray-300">
             Often, products tend to have just one primary key path scenario.
@@ -180,7 +180,7 @@ export default function PreproPage() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-12 py-12 md:py-16 px-8">
-          <div className="flex flex-1 flex-col gap-8">
+          <div className="flex flex-1 flex-col gap-4 md:gap-8">
             <h3 className="text-5xl font-semibold">Lo-fi Ideation</h3>
             <p className="text-lg font-normal text-gray-300">
               By iterating on some very rough sketches, we realized some of the
@@ -214,7 +214,7 @@ export default function PreproPage() {
               className="rounded-lg"
             />
           </div>
-          <div className="flex flex-1 flex-col gap-8">
+          <div className="flex flex-1 flex-col gap-4 md:gap-8">
             <h3 className="text-5xl font-semibold">Wireframes</h3>
             <p className="text-lg font-normal text-gray-300">
               Creating low fidelity wireframes, we were able to simplify the
@@ -228,8 +228,8 @@ export default function PreproPage() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-col gap-8 py-12 md:py-16 mb-16">
-          <div className="flex flex-col gap-8  px-8">
+        <div className="flex flex-col md:flex-col gap-4 md:gap-8 py-12 md:py-16 mb-16">
+          <div className="flex flex-col gap-4 md:gap-8 px-8">
             <h3 className="text-5xl font-semibold">Style Guide</h3>
             <p className="text-lg font-normal text-gray-300">
               We knew we wanted a gradient to play a key role in the branding,

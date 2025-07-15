@@ -5,7 +5,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-light">
-      <div className="flex w-full text-[6rem] lg:text-[12rem] pt-24 lg:pt-16 items-center">
+      <div className="flex w-full text-[6rem] lg:text-[12rem] pt-16 items-center">
         <div className="flex flex-1 justify-start gap-4 md:gap-8 px-4 md:px-8 overflow-hidden big-shoulders-black">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function About() {
           </motion.h2>
         </div>
       </div>
-      <div className="flex flex-col max-w-[108rem] gap-12 lg:flex-row py-8 px-4 md:px-12 items-center font-sans">
+      <div className="flex flex-col max-w-[108rem] gap-12 lg:flex-row py-2 md:py-8 px-4 md:px-12 items-center font-sans">
         <img
           src="/scott-2.png"
           width="400"
@@ -85,7 +85,7 @@ export default function About() {
             </a>
             .
           </p>
-          <p className="text-lg">
+          <p className="text-sm md:text-lg pb-2">
             <span className="font-bold">*</span>My name is legal name
             &quot;Richard Scott Daly&quot;, but I go by my middle name,
             &quot;Scott&quot;. So if you see Richard Daly on something,

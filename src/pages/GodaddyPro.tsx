@@ -2,7 +2,7 @@ const GodaddyPro = () => {
   document.body.style.backgroundColor = "#ffffff";
   return (
     <div className="flex flex-col w-full items-center font-sans bg-godaddy-bg">
-      <div className="flex flex-col items-center w-full  gap-4">
+      <div className="flex flex-col items-center w-full gap-4">
         <div className="flex bg-[#f0f1dc] justify-center scale-150 lg:scale-100">
           <img
             src="/godaddy-pro/header.png"
@@ -12,7 +12,7 @@ const GodaddyPro = () => {
             className=" w-10/12 mt-24 md:mt-0"
           />
         </div>
-        <div className="flex flex-col w-7/12 mt-24 md:mt-12 mb-32 gap-12">
+        <div className="flex flex-col px-8 md:px-0 md:w-7/12 mt-24 md:mt-12 mb-12 md:mb-32 gap-8 md:gap-12">
           <div className="flex justify-center items-center w-full">
             <img
               src="/godaddy-pro/gd-logo.svg"
