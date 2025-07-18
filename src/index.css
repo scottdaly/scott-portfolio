@@ -136,3 +136,18 @@ body {
   color: #90908b;
   font-size: 0.8rem;
 }
+
+/* Debug CSS for Nevermade SVG */
+.nevermade-logo-svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.nevermade-logo-svg path {
+  fill: white !important;
+  stroke: none !important;
+}
+
+.nevermade-logo-svg g {
+  opacity: 1 !important;
+}
