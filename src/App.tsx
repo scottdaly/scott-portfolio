@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import GoDaddyLogo from "./components/GoDaddyLogo";
 import HandshakeSticker from "./components/HandshakeSticker";
-import NevermadeLogo from "./components/NevermadeLogo";
 
 function App() {
   const [windowSize, setWindowSize] = useState({
@@ -63,7 +62,7 @@ function App() {
           <div className="w-full rounded-xl overflow-hidden">
             <Link to="/nevermade" className="relative group">
               <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/10 flex justify-center items-center group-hover:scale-110 transition-all duration-[3000ms] z-10">
-                <NevermadeLogo />
+                <img src="/nevermade/nevermade-logo.svg" />
               </div>
 
               {windowSize.width < 800 ? (
