@@ -113,6 +113,13 @@ const AIPage = () => {
             <ExperimentCard key={exp.title} {...exp} />
           ))}
         </section>
+        {windowSize.width > 768 && (
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-medium">
+              This only shows on Desktop
+            </h2>
+          </div>
+        )}
       </main>
     </div>
   );
