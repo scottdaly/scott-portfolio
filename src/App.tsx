@@ -27,48 +27,21 @@ function App() {
     <main className="flex min-h-screen flex-col bg-[#e0e0dc] items-center">
       <div className="w-full max-w-[108rem] mx-auto px-4 md:px-12">
         <div
-          className={`flex flex-col w-full pt-24 md:pt-36 font-semibold font-sans text-dark`}
+          className={`flex flex-col w-full pt-24 md:pt-28 font-semibold font-sans text-dark`}
         >
-          <div className="flex flex-col tracking-tighter">
+          <div className="flex flex-col tracking-tighter py-4 xl:py-8">
+            
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black md:leading-[7.5rem]"
+              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black md:leading-[7.5rem] xl:leading-[9rem] md:-ml-2"
             >
-              PRODUCT AND
+              UX & PRODUCT DESIGNER
             </motion.h2>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black mb-2 md:mb-0"
-            >
-              UX DESIGNER
-            </motion.h2>
+            
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-            className="flex w-full text-zinc-700 -mt-2 mb-2"
-          >
-            <div className="text-2xl md:text-3xl xl:text-3xl font-light">
-              <div className="flex flex-row items-center md:gap-1.5">
-                <span className="fill-zinc-700 flex-shrink-0 scale-60 md:scale-85 -translate-x-[2px] translate-y-[2px]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="28"
-                    width="21"
-                    viewBox="0 0 384 512"
-                  >
-                    <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
-                  </svg>
-                </span>
-                Seattle, WA
-              </div>
-            </div>
-          </motion.div>
+          
         </div>
 
         <div className="flex flex-col gap-8 w-full py-8">

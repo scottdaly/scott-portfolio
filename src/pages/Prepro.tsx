@@ -96,14 +96,14 @@ export default function PreproPage() {
           <h3 className="text-5xl font-semibold">Meet the Users</h3>
           <div className="flex flex-col md:flex-row justify-center md:justify-between gap-16">
             <div className="flex flex-col gap-12">
-              <div className="flex flex-col md:flex-row gap-12">
+              <div className="flex flex-col md:flex-row items-center gap-12">
                 <img
                   src="/prepro/sarah.png"
                   width="200"
                   height="200"
                   alt="Picture of student"
                 />
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 w-full ">
                   <h4 className="text-3xl font-semibold">Sarah Anderson</h4>
                   <p className="text-xl">High School Senior</p>
                   <ul className="list-inside list-disc text-gray-200 text-lg">
@@ -127,14 +127,14 @@ export default function PreproPage() {
               </div>
             </div>
             <div className="flex flex-col gap-12">
-              <div className="flex flex-col md:flex-row gap-12">
+              <div className="flex flex-col md:flex-row items-center gap-12">
                 <img
                   src="/prepro/leah.png"
                   width="200"
                   height="200"
                   alt="Picture of student"
                 />
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 w-full">
                   <h4 className="text-3xl font-semibold">Leah Smith</h4>
                   <p className="text-xl">Product Manager @ Google</p>
                   <ul className="list-inside list-disc text-gray-200 text-lg">

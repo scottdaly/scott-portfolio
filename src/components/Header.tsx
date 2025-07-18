@@ -88,7 +88,7 @@ export default function Header() {
               Work
             </p>
           </Link>
-          <Link
+          {/* <Link
             className="flex items-center justify-center w-12 text-center"
             to="/ai"
           >
@@ -108,7 +108,7 @@ export default function Header() {
             >
               AI
             </p>
-          </Link>
+          </Link> */}
           <Link
             className="flex items-center justify-center w-12 text-center"
             to="/about"
@@ -214,7 +214,7 @@ export default function Header() {
                   >
                     Work
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/ai"
                     onClick={() => setIsMenuOpen(false)}
                     className={`text-2xl font-semibold ${
@@ -224,7 +224,7 @@ export default function Header() {
                     }`}
                   >
                     AI
-                  </Link>
+                  </Link> */}
                   <Link
                     to="/about"
                     onClick={() => setIsMenuOpen(false)}

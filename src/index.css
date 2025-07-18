@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=League+Gothic&display=swap");
 @import "tailwindcss";
 
 @layer base {
@@ -30,7 +30,8 @@
   --color-advertising-bg: #eae6e1;
   --color-advertising-text: #111111;
   --color-nevermade-bg: #09090b;
-  --color-nevermade-text: white;
+  --color-nevermade-text: #edebe4;
+  --color-nevermade-text-secondary: #c7c5bf;
 }
 
 body {
@@ -109,4 +110,29 @@ body {
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
+}
+
+.bebas-neue {
+  font-family: "Bebas Neue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.league-gothic {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.profile-list {
+  list-style: disc;
+  color: #90908b;
+  font-size: 0.8rem;
 }

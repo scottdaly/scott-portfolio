@@ -13,15 +13,7 @@ const GodaddyPro = () => {
           />
         </div>
         <div className="flex flex-col px-8 md:px-0 md:w-7/12 mt-24 md:mt-12 mb-12 md:mb-32 gap-8 md:gap-12">
-          <div className="flex justify-center items-center w-full">
-            <img
-              src="/godaddy-pro/gd-logo.svg"
-              height={500}
-              width={500}
-              alt="GoDaddy Logo"
-              className=""
-            />
-          </div>
+          
           <p className="text-lg md:text-2xl leading-relaxed font-light">
             At GoDaddy, I have worked on{" "}
             <span className="font-bold">
