@@ -50,7 +50,7 @@ const CompetitorCard = ({
     {/* Push the lesson to the bottom for consistent alignment */}
     <div className="flex flex-col mt-4 bg-indigo-500/10 p-4 rounded-lg">
       <h4 className="mb-2 uppercase text-xs text-indigo-300">
-        Lesson
+        Takeaway
       </h4>
       <p className="text-sm italic text-indigo-600 dark:text-indigo-400">
         {lesson}
@@ -128,12 +128,12 @@ const Nevermade = () => {
         <section className="py-8 px-4 md:px-6 lg:px-8">
           {/* Heading */}
           <div className="flex flex-col gap-4 max-w-7xl mx-auto px-4 md:mb-8">
-          <h2 className="text-5xl md:text-7xl font-medium tracking-tight md:mb-2">
-            Designing & Branding for Scale
-          </h2>
-          <p className="mb-6 leading-relaxed text-nevermade-text-secondary text-lg md:w-2/3">
-            I started by create a curated selection of typefaces, colors, spacing variables, and components that would be used across the product. This would allow us to easily build new pages and features while expressing the unique Nevermade brand.
-          </p>
+            <h2 className="text-5xl md:text-7xl font-medium tracking-tight md:mb-2">
+              Designing & Branding for Scale
+            </h2>
+            <p className="mb-6 leading-relaxed text-nevermade-text-secondary text-lg md:w-2/3">
+              I started by create a curated selection of typefaces, colors, spacing variables, and components that would be used across the product. This would allow us to easily build new pages and features while expressing the unique Nevermade brand.
+            </p>
           </div>
 
           <img src="/nevermade/nevermade-design-system.png" alt="Nevermade" className="w-full object-cover rounded-xl md:mb-2" />

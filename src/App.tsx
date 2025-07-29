@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import GoDaddyLogo from "./components/GoDaddyLogo";
 import HandshakeSticker from "./components/HandshakeSticker";
+import NevermadeLogo from "./components/NevermadeLogo";
 
 function App() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  
+  // Detect Firefox or Safari browsers
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isFirefox = userAgent.indexOf('firefox') > -1;
+  const isSafari = userAgent.indexOf('safari') > -1 && userAgent.indexOf('chrome') === -1;
+  const shouldUseFallbackImage = isFirefox || isSafari;
 
   useEffect(() => {
     const handleResize = () => {
@@ -61,11 +68,21 @@ function App() {
           </div>
           <div className="w-full rounded-xl overflow-hidden">
             <Link to="/nevermade" className="relative group">
-              <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/10 flex justify-center items-center group-hover:scale-110 transition-all duration-[3000ms] z-10">
-                <img src="/nevermade/nevermade-logo.svg" />
-              </div>
+              {!shouldUseFallbackImage && (
+                <div className="absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center bg-black/10 group-hover:scale-110 transition-all duration-[3000ms] z-20">
+                  <NevermadeLogo className="w-auto h-[60px] md:h-[80px] max-w-[80%]" />
+                </div>
+              )}
 
-              {windowSize.width < 800 ? (
+              {shouldUseFallbackImage ? (
+                <img
+                  src="/nevermade/nevermade-cover-ff.png"
+                  width="1000"
+                  height="1000"
+                  alt="Nevermade"
+                  className="w-full object-cover h-[500px] 3xl:h-[700px] group-hover:scale-105 transition-transform duration-[3000ms]"
+                />
+              ) : windowSize.width < 800 ? (
                 <img
                   src="/nevermade/cover-mobile.jpg"
                   width="1000"
@@ -132,8 +149,8 @@ function App() {
                       y2="118.5"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#9249BE" />
-                      <stop offset="1" stop-color="#FF2889" />
+                      <stop stopColor="#9249BE" />
+                      <stop offset="1" stopColor="#FF2889" />
                     </linearGradient>
                     <linearGradient
                       id="paint1_linear_102_27"
@@ -143,8 +160,8 @@ function App() {
                       y2="141.375"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#9249BE" />
-                      <stop offset="1" stop-color="#FF2889" />
+                      <stop stopColor="#9249BE" />
+                      <stop offset="1" stopColor="#FF2889" />
                     </linearGradient>
                     <linearGradient
                       id="paint2_linear_102_27"
@@ -154,8 +171,8 @@ function App() {
                       y2="141.375"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#9249BE" />
-                      <stop offset="1" stop-color="#FF2889" />
+                      <stop stopColor="#9249BE" />
+                      <stop offset="1" stopColor="#FF2889" />
                     </linearGradient>
                   </defs>
                 </svg>
