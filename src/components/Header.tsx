@@ -88,9 +88,9 @@ export default function Header() {
               Work
             </p>
           </Link>
-          {/* <Link
+          <Link
             className="flex items-center justify-center w-12 text-center"
-            to="/ai"
+            to="/play"
           >
             <p
               className={`transition-all duration-300
@@ -100,15 +100,15 @@ export default function Header() {
                   : "hover:text-dark-green"
               }
                 ${
-                  location.pathname === "/ai"
+                  location.pathname === "/play"
                     ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-bold underline underline-offset-8"
                     : "hover:font-bold"
                 }
                 `}
             >
-              AI
+              Play
             </p>
-          </Link> */}
+          </Link>
           <Link
             className="flex items-center justify-center w-12 text-center"
             to="/about"
@@ -214,17 +214,17 @@ export default function Header() {
                   >
                     Work
                   </Link>
-                  {/* <Link
-                    to="/ai"
+                   <Link
+                    to="/play"
                     onClick={() => setIsMenuOpen(false)}
                     className={`text-2xl font-semibold ${
-                      location.pathname === "/ai"
+                      location.pathname === "/play"
                         ? "text-white font-bold underline underline-offset-8"
                         : "text-zinc-400 hover:text-dark-green"
                     }`}
                   >
-                    AI
-                  </Link> */}
+                    Play
+                  </Link>
                   <Link
                     to="/about"
                     onClick={() => setIsMenuOpen(false)}
