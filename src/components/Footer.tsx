@@ -38,7 +38,7 @@ export default function Footer() {
           {location.pathname === "/" ||
           location.pathname === "/about" ? null : (
             <button
-              className={`text-md bg-zinc-400/40 hover:opacity-90 transition-color duration-300 py-2 px-4 rounded-lg cursor-pointer ${
+              className={`text-md border border-zinc-400/40 hover:border-zinc-400/60 hover:bg-zinc-400/10 transition-color duration-300 py-2 px-4 rounded-lg cursor-pointer ${
                 isDarkBackground ? "text-zinc-200/80" : "text-zinc-800/70"
               }`}
               onClick={() => navigate("/")}
@@ -68,9 +68,12 @@ export default function Footer() {
                 <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
               </svg>
             </CopyTooltip>
-            <p className="text-sm md:text-xl flex flex-col md:flex-row items-end md:items-start">
+            <div onClick={() => {
+              navigator.clipboard.writeText("rscottdaly@gmail.com");
+
+            }} className="text-sm md:text-xl flex flex-col md:flex-row items-end md:items-start">
               rscottdaly<span>@gmail.com</span>
-            </p>
+            </div>
           </div>
         </div>
       </div>
