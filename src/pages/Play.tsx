@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const ExperimentCard = ({
   title,
   description,
@@ -37,22 +35,7 @@ const ExperimentCard = ({
 );
 
 const PlayPage = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   document.body.style.backgroundColor = "#e0e0dc";
 
