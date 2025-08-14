@@ -10,12 +10,18 @@ function App() {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [hasLoaded, setHasLoaded] = useState(false);
   
   // Detect Firefox or Safari browsers
   const userAgent = navigator.userAgent.toLowerCase();
   const isFirefox = userAgent.indexOf('firefox') > -1;
   const isSafari = userAgent.indexOf('safari') > -1 && userAgent.indexOf('chrome') === -1;
   const shouldUseFallbackImage = isFirefox || isSafari;
+
+  useEffect(() => {
+    setHasLoaded(true);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,28 +33,96 @@ function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const maxScroll = 400; // Quicker fade animation
+      const progress = Math.min(scrollY / maxScroll, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+  // Calculate sizes for hero text
+  const isMobile = windowSize.width < 768;
+  const startFontSize = isMobile ? windowSize.width * 0.18 : windowSize.width * 0.10;
 
   document.body.style.backgroundColor = "#e0e0dc";
 
   return (
     <main className="flex min-h-screen flex-col bg-[#e0e0dc] items-center">
       <div className="w-full max-w-[108rem] mx-auto px-4 md:px-12">
-        <div
-          className={`flex flex-col w-full pt-24 md:pt-28 font-semibold font-sans text-dark`}
-        >
-          <div className="flex flex-col tracking-tighter py-4 xl:py-8">
+        {/* Hero section with all content in document flow */}
+        <div className="relative h-screen flex items-center justify-center">
+          <div className="flex flex-col items-center">
+            {/* Hero name that scrolls naturally and fades out */}
+            <motion.h1
+              className="newsreader italic text-black leading-none"
+              style={{
+                fontSize: `${startFontSize}px`,
+                filter: `blur(${Math.min(scrollProgress * 2, 2)}px)`, // Cap blur at 2px
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: hasLoaded ? (scrollProgress >= 0.67 ? 0 : Math.pow(1 - scrollProgress * 1.5, 2)) : 0,
+                y: hasLoaded ? -scrollProgress * 20 : 20
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              Scott Daly
+            </motion.h1>
             
-            <motion.h2
+            {/* Subtitle and buttons */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-7xl md:text-9xl xl:text-[10rem] big-shoulders-black md:leading-[7.5rem] xl:leading-[9rem] md:-ml-2"
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              UX & PRODUCT DESIGNER
-            </motion.h2>
-            
+              <p 
+                className="newsreader font-light text-center whitespace-nowrap mb-4"
+                style={{ fontSize: `${Math.max(20, startFontSize * 0.22)}px` }}
+              >
+                Product & UX Designer
+              </p>
+              
+              {/* Buttons */}
+              <div className="flex items-center gap-2 justify-center">
+                <a
+                  href="#work"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' });
+                  }}
+                  className="bg-black text-white newsreader font-light pt-4 px-8 pb-3 rounded-full text-lg hover:bg-gray-800 transition-colors duration-200"
+                >
+                  View Work
+                </a>
+                <Link
+                  to="/about"
+                  className="text-black font-sans px-4 py-3 text-lg hover:text-gray-600 transition-colors duration-200 flex items-center gap-1"
+                >
+                  About me
+                  <svg 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2"
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
           </div>
-          
         </div>
 
         <div className="flex flex-col gap-8 w-full py-8">

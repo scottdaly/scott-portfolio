@@ -131,6 +131,11 @@ body {
   font-optical-sizing: auto;
 }
 
+.newsreader {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+}
+
 .profile-list {
   list-style: disc;
   color: #90908b;
