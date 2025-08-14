@@ -1,10 +1,10 @@
 import CopyTooltip from "../components/CopyTooltip";
 import { motion } from "framer-motion";
 export default function About() {
-  document.body.style.backgroundColor = "#e0e0dc";
+  document.body.style.backgroundColor = "#ededeb";
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-light">
+    <div className="min-h-[calc(100vh-5rem)] flex flex-col items-center bg-light">
       <div className="flex w-full text-[6rem] lg:text-[12rem] pt-16 items-center">
         <div className="flex flex-1 justify-start gap-4 md:gap-8 px-4 md:px-8 overflow-hidden big-shoulders-black">
           <motion.h2
@@ -58,16 +58,15 @@ export default function About() {
           className=" rounded-md"
         />
         <div className="flex flex-col flex-1 md:px-12 my-auto gap-2 md:gap-5 text-left">
-          <h2 className="text-2xl md:text-4xl xl:text-5xl eb-garamond-bold">
-            Hey there!
+          
+          <h2 className="text-4xl md:text-5xl xl:text-7xl newsreader font-light">
+            Hey, I&apos;m Scott!
           </h2>
-          <h2 className="text-4xl md:text-5xl xl:text-7xl eb-garamond-bold">
-            I&apos;m Scott Daly*, a product & UX designer.
-          </h2>
-          <p className="text-xl md:text-2xl xl:text-3xl">
-            I tell stories, solve business problems & connect people through
-            designing digital products & interactive experiences.
+          <p className="text-lg md:text-xl xl:text-2xl">
+            I'm a product & UX designer who loves technology and design.
           </p>
+          <p className="text-lg md:text-xl xl:text-2xl ">Before I was a designer, I was an art director working in advertising, and have been designing things since I discovered Photoshop to design band t-shirts back in the day.</p>
+          <p className="text-lg md:text-xl xl:text-2xl">When I'm not working I'm messing around with code (usually javascript / react) and building AI-powered software, playing guitar, or exploring Seattle.</p>
           <p className="font-bold py-4 text-xl md:text-2xl">
             Feel free to send me an email at{" "}
             <CopyTooltip
@@ -86,7 +85,7 @@ export default function About() {
             .
           </p>
           <p className="text-sm md:text-lg pb-2">
-            <span className="font-bold">*</span>My name is legal name
+            <span className="font-bold">Note: </span>My name is legal name
             &quot;Richard Scott Daly&quot;, but I go by my middle name,
             &quot;Scott&quot;. So if you see Richard Daly on something,
             that&apos;s still me!

@@ -9,6 +9,9 @@ export default function Header() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const darkBackgrounds = ["/prepro", "/hallpass", "/nevermade"];
   
+  // Only show animated logo on homepage
+  const isHomepage = location.pathname === "/";
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -23,25 +26,28 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Only show animated logo on homepage
-  const isHomepage = location.pathname === "/";
+  // Reset scroll progress when navigating to homepage
+  useEffect(() => {
+    if (isHomepage) {
+      setScrollProgress(0);
+    }
+  }, [location.pathname, isHomepage]);
   
   return (
     <>
       {/* Header background layer - separate from main header to prevent z-index issues */}
       {isHomepage && (
         <div 
-          className="fixed w-full h-[72px] top-0 left-0 z-40 transition-all duration-700 pointer-events-none"
+          className="fixed w-full h-20 top-0 left-0 z-40 transition-all duration-700 pointer-events-none"
           style={{
-            backgroundColor: `rgba(224, 224, 220, ${Math.min(0.95, scrollProgress * 1.2)})`,
-            backdropFilter: scrollProgress > 0.2 ? 'blur(8px)' : 'none',
-            boxShadow: scrollProgress > 0.3 ? '0 1px 3px 0 rgba(0, 0, 0, 0.1)' : 'none'
+            backgroundColor: `rgba(237, 237, 235, ${Math.min(0.95, scrollProgress * 1.2)})`,
+            backdropFilter: scrollProgress > 0.2 ? 'blur(8px)' : 'none'
           }}
         />
       )}
       
       {/* Main header content */}
-      <div className={`fixed w-full py-6 z-50 text-black/80`}>
+      <div className={`fixed w-full h-20 z-50 text-black/80 flex items-center`}>
         <div className="flex justify-between w-full px-4 md:px-12 max-w-[108rem] mx-auto items-center">
         {/* Logo with fade animation */}
         <Link to="/">
@@ -73,9 +79,9 @@ export default function Header() {
             to="/"
           >
             <p
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 font-light ${
                 location.pathname === "/"
-                  ? "text-[#1c1c1c] font-bold underline underline-offset-8"
+                  ? "text-[#1c1c1c] font-semibold underline underline-offset-8"
                   : darkBackgrounds.includes(location.pathname)
                   ? "hover:text-white text-gray-200/90 hover:font-bold"
                   : "text-gray-800/90 hover:text-dark-green hover:font-bold"
@@ -89,7 +95,7 @@ export default function Header() {
             to="/play"
           >
             <p
-              className={`transition-all duration-300
+              className={`transition-all duration-300 font-light
               ${
                 darkBackgrounds.includes(location.pathname)
                   ? "hover:text-white text-gray-200/90"
@@ -97,7 +103,7 @@ export default function Header() {
               }
                 ${
                   location.pathname === "/play"
-                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-bold underline underline-offset-8"
+                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-semibold underline underline-offset-8"
                     : "hover:font-bold"
                 }
                 `}
@@ -110,7 +116,7 @@ export default function Header() {
             to="/about"
           >
             <p
-              className={`transition-all duration-300
+              className={`transition-all duration-300 font-light
               ${
                 darkBackgrounds.includes(location.pathname)
                   ? "hover:text-white text-gray-200/90"
@@ -118,7 +124,7 @@ export default function Header() {
               }
                 ${
                   location.pathname === "/about"
-                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-bold underline underline-offset-8"
+                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-semibold underline underline-offset-8"
                     : "hover:font-bold"
                 }
                 `}

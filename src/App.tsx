@@ -7,8 +7,8 @@ import NevermadeLogo from "./components/NevermadeLogo";
 
 function App() {
   const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: typeof window !== 'undefined' ? window.innerWidth : 1440,
+    height: typeof window !== 'undefined' ? window.innerHeight : 900,
   });
   const [scrollProgress, setScrollProgress] = useState(0);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -21,6 +21,11 @@ function App() {
 
   useEffect(() => {
     setHasLoaded(true);
+    // Ensure window size is correct on mount
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
   }, []);
 
   useEffect(() => {
@@ -47,24 +52,30 @@ function App() {
     
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Reset scroll progress when component mounts
+  useEffect(() => {
+    setScrollProgress(0);
+    window.scrollTo(0, 0);
+  }, []);
   
   // Calculate sizes for hero text
   const isMobile = windowSize.width < 768;
   const startFontSize = isMobile ? windowSize.width * 0.18 : windowSize.width * 0.10;
 
-  document.body.style.backgroundColor = "#e0e0dc";
+  document.body.style.backgroundColor = "#ededeb";
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#e0e0dc] items-center">
+    <main className="flex min-h-screen flex-col bg-[#ededeb] items-center">
       <div className="w-full max-w-[108rem] mx-auto px-4 md:px-12">
         {/* Hero section with all content in document flow */}
         <div className="relative h-screen flex items-center justify-center">
           <div className="flex flex-col items-center">
             {/* Hero name that scrolls naturally and fades out */}
             <motion.h1
-              className="newsreader italic text-black leading-none"
+              className="newsreader italic text-black leading-[0.8]"
               style={{
-                fontSize: `${startFontSize}px`,
+                fontSize: `${startFontSize - 10}px`,
                 filter: `blur(${Math.min(scrollProgress * 2, 2)}px)`, // Cap blur at 2px
               }}
               initial={{ opacity: 0, y: 20 }}
@@ -84,8 +95,8 @@ function App() {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
               <p 
-                className="newsreader font-light text-center whitespace-nowrap mb-4"
-                style={{ fontSize: `${Math.max(20, startFontSize * 0.22)}px` }}
+                className="newsreader font-light text-center whitespace-nowrap mb-4 text-emerald-950"
+                style={{ fontSize: `${Math.max(20, startFontSize * 0.28)}px` }}
               >
                 Product & UX Designer
               </p>
@@ -98,13 +109,13 @@ function App() {
                     e.preventDefault();
                     window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' });
                   }}
-                  className="bg-black text-white newsreader font-light pt-4 px-8 pb-3 rounded-full text-lg hover:bg-gray-800 transition-colors duration-200"
+                  className="bg-emerald-950/90 text-white newsreader font-light pt-4 px-8 pb-3 rounded-full text-lg hover:bg-emerald-950/80 transition-colors duration-200 "
                 >
                   View Work
                 </a>
                 <Link
                   to="/about"
-                  className="text-black font-sans px-4 py-3 text-lg hover:text-gray-600 transition-colors duration-200 flex items-center gap-1"
+                  className="text-emerald-950/90 font-sans px-4 py-3 text-lg hover:text-emerald-950/80 transition-colors duration-200 flex items-center gap-1"
                 >
                   About me
                   <svg 

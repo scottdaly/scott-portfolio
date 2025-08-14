@@ -37,7 +37,7 @@ const ExperimentCard = ({
 const PlayPage = () => {
 
 
-  document.body.style.backgroundColor = "#e0e0dc";
+  document.body.style.backgroundColor = "#ededeb";
 
   const experiments = [
 
@@ -65,7 +65,7 @@ const PlayPage = () => {
   ];
 
   return (
-    <div className="flex flex-col w-full items-center font-sans bg-[#e0e0dc] text-zinc-900 dark:text-zinc-100">
+    <div className="flex flex-col w-full items-center font-sans min-h-[calc(100vh-4rem)] text-zinc-900 dark:text-zinc-100">
       
       <main className="w-full max-w-6xl px-4 md:px-8 pb-16 pb-16 pt-24">
         <section className="flex flex-col gap-4">
