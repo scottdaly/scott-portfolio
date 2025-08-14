@@ -1,10 +1,9 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { darkBackgrounds } from "../utils/utils";
 import CopyTooltip from "./CopyTooltip";
 
 export default function Footer() {
   let year = new Date().getFullYear();
-  let navigate = useNavigate();
   let location = useLocation();
   const isDarkBackground = darkBackgrounds.includes(location.pathname);
 
