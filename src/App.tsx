@@ -177,7 +177,7 @@ function App() {
                 />
               ) : (
                 <img
-                  src="/nevermade/cover.jpg"
+                  src="/nevermade/nevermade-cover-mobile.jpg"
                   width="1000"
                   height="1000"
                   alt="Nevermade cover"

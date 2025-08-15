@@ -1,18 +1,20 @@
-import { StrictMode } from "react";
+import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AdsPage from "./pages/Ads.tsx";
-import GodaddyPro from "./pages/GodaddyPro.tsx";
-import PreproPage from "./pages/Prepro.tsx";
-import HallpassPage from "./pages/Hallpass.tsx";
-import AboutPage from "./pages/About.tsx";
-import NevermadePage from "./pages/Nevermade.tsx";
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
-import PlayPage from "./pages/Play.tsx";
+
+// Lazy load page components
+const AdsPage = lazy(() => import("./pages/Ads.tsx"));
+const GodaddyPro = lazy(() => import("./pages/GodaddyPro.tsx"));
+const PreproPage = lazy(() => import("./pages/Prepro.tsx"));
+const HallpassPage = lazy(() => import("./pages/Hallpass.tsx"));
+const AboutPage = lazy(() => import("./pages/About.tsx"));
+const NevermadePage = lazy(() => import("./pages/Nevermade.tsx"));
+const PlayPage = lazy(() => import("./pages/Play.tsx"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -20,16 +22,18 @@ createRoot(document.getElementById("root")!).render(
       <ScrollToTop />
       <div className="w-full mx-auto bg-light">
         <Header />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/prepro" element={<PreproPage />} />
-          <Route path="/hallpass" element={<HallpassPage />} />
-          <Route path="/ads" element={<AdsPage />} />
-          <Route path="/godaddy" element={<GodaddyPro />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/play" element={<PlayPage />} />
-          <Route path="/nevermade" element={<NevermadePage />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/prepro" element={<PreproPage />} />
+            <Route path="/hallpass" element={<HallpassPage />} />
+            <Route path="/ads" element={<AdsPage />} />
+            <Route path="/godaddy" element={<GodaddyPro />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/play" element={<PlayPage />} />
+            <Route path="/nevermade" element={<NevermadePage />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </div>
     </BrowserRouter>
