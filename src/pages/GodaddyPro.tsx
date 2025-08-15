@@ -1,7 +1,7 @@
 const GodaddyPro = () => {
   document.body.style.backgroundColor = "#ffffff";
   return (
-    <div className="flex flex-col w-full items-center font-sans bg-godaddy-bg">
+    <div className="flex flex-col w-full items-center font-sans bg-godaddy-bg overflow-x-hidden">
       <div className="flex flex-col items-center w-full gap-4">
         <div className="flex bg-[#f0f1dc] justify-center scale-150 lg:scale-100">
           <img

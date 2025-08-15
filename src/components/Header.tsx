@@ -11,6 +11,8 @@ export default function Header() {
   
   // Only show animated logo on homepage
   const isHomepage = location.pathname === "/";
+  // Show header background on homepage, play, about, and godaddy pages
+  const showHeaderBackground = location.pathname === "/" || location.pathname === "/play" || location.pathname === "/about";
   
   useEffect(() => {
     const handleScroll = () => {
@@ -36,12 +38,14 @@ export default function Header() {
   return (
     <>
       {/* Header background layer - separate from main header to prevent z-index issues */}
-      {isHomepage && (
+      {showHeaderBackground && (
         <div 
           className="fixed w-full h-20 top-0 left-0 z-40 transition-all duration-700 pointer-events-none"
           style={{
-            backgroundColor: `rgba(237, 237, 235, ${Math.min(0.95, scrollProgress * 1.2)})`,
-            backdropFilter: scrollProgress > 0.2 ? 'blur(8px)' : 'none'
+            backgroundColor: location.pathname === "/godaddy" 
+              ? `rgba(240, 241, 220, 0.95)` // #F0F1DC for GoDaddy
+              : `rgba(237, 237, 235, ${isHomepage ? Math.min(0.95, scrollProgress * 1.2) : 0.95})`,
+            backdropFilter: isHomepage ? (scrollProgress > 0.2 ? 'blur(8px)' : 'none') : 'blur(8px)'
           }}
         />
       )}
@@ -61,7 +65,7 @@ export default function Header() {
                 ? "text-black hover:text-black/70 bg-[#F0F1DC]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
                 : location.pathname === "/ads"
                 ? "text-black hover:text-black/70 bg-[#eae6e1]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
-                : "text-black hover:text-black/70 light-bg backdrop-blur-sm rounded-2xl px-4 py-2"
+                : "text-black hover:text-black/70"
             }`}
             style={{
               opacity: isHomepage ? (scrollProgress > 0.5 ? Math.min(1, (scrollProgress - 0.5) * 4) : 0) : 1, // Fade in after hero fades out
@@ -83,7 +87,7 @@ export default function Header() {
               ? "bg-[#F0F1DC]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
               : location.pathname === "/ads"
               ? "bg-[#eae6e1]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
-              : "light-bg  backdrop-blur-sm rounded-2xl px-4 py-2"
+              : ""
           }`}
         >
           <Link
@@ -150,7 +154,11 @@ export default function Header() {
         <button
           className={`md:hidden flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-all duration-300 ${
             darkBackgrounds.includes(location.pathname)
-              ? "text-white bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+              ? "text-white bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-4"
+              : location.pathname === "/godaddy"
+              ? "text-black bg-[#F0F1DC]/40 backdrop-blur-sm rounded-2xl px-4 py-4"
+              : location.pathname === "/ads"
+              ? "text-black bg-[#eae6e1]/40 backdrop-blur-sm rounded-2xl px-4 py-4"
               : "text-black p-2"
           }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -220,10 +228,10 @@ export default function Header() {
                   <Link
                     to="/"
                     onClick={() => setIsMenuOpen(false)}
-                    className={`text-2xl font-semibold ${
+                    className={`text-2xl ${
                       location.pathname === "/"
                         ? "text-white font-bold underline underline-offset-8"
-                        : "text-zinc-400 hover:text-dark-green"
+                        : "text-zinc-400 hover:text-dark-green font-light"
                     }`}
                   >
                     Work
@@ -231,10 +239,10 @@ export default function Header() {
                    <Link
                     to="/play"
                     onClick={() => setIsMenuOpen(false)}
-                    className={`text-2xl font-semibold ${
+                    className={`text-2xl ${
                       location.pathname === "/play"
                         ? "text-white font-bold underline underline-offset-8"
-                        : "text-zinc-400 hover:text-dark-green"
+                        : "text-zinc-400 hover:text-dark-green font-light"
                     }`}
                   >
                     Play
@@ -242,10 +250,10 @@ export default function Header() {
                   <Link
                     to="/about"
                     onClick={() => setIsMenuOpen(false)}
-                    className={`text-2xl font-semibold ${
+                    className={`text-2xl ${
                       location.pathname === "/about"
                         ? "text-white font-bold underline underline-offset-8"
-                        : "text-zinc-400 hover:text-dark-green"
+                        : "text-zinc-400 hover:text-dark-green font-light"
                     }`}
                   >
                     About
