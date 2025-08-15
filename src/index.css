@@ -38,6 +38,14 @@ body {
   background-color: var(--color-light);
 }
 
+.light-bg {
+  background-color: var(--color-light);
+}
+
+.godaddy-bg {
+  background-color: var(--color-godaddy-bg);
+}
+
 .balance-text {
   text-wrap: balance;
 }

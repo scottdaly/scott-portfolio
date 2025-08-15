@@ -159,7 +159,16 @@ function App() {
                 </div>
               )}
 
-              {shouldUseFallbackImage ? (
+              {shouldUseFallbackImage ? 
+              windowSize.width < 800 ? (
+                <img
+                  src="/nevermade/nevermade-cover-mobile.jpg"
+                  width="1000"
+                  height="1000"
+                  alt="Nevermade cover"
+                  className="w-full object-cover h-[500px] 3xl:h-[700px] group-hover:scale-105 transition-transform duration-[3000ms]"
+                />
+              ) : (
                 <img
                   src="/nevermade/nevermade-cover-ff.png"
                   width="1000"
@@ -177,7 +186,7 @@ function App() {
                 />
               ) : (
                 <img
-                  src="/nevermade/nevermade-cover-mobile.jpg"
+                  src="/nevermade/cover.jpg"
                   width="1000"
                   height="1000"
                   alt="Nevermade cover"

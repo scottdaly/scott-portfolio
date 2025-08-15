@@ -55,7 +55,13 @@ export default function Header() {
             className={`transition-all duration-500 newsreader italic cursor-pointer inline-block text-[32px] ${
               darkBackgrounds.includes(location.pathname)
                 ? "text-white hover:text-primary bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-2"
-                : "text-black hover:text-black/70"
+                : location.pathname === "/"
+                ? "text-black hover:text-black/70"
+                : location.pathname === "/godaddy"
+                ? "text-black hover:text-black/70 bg-[#F0F1DC]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+                : location.pathname === "/ads"
+                ? "text-black hover:text-black/70 bg-[#eae6e1]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+                : "text-black hover:text-black/70 light-bg backdrop-blur-sm rounded-2xl px-4 py-2"
             }`}
             style={{
               opacity: isHomepage ? (scrollProgress > 0.5 ? Math.min(1, (scrollProgress - 0.5) * 4) : 0) : 1, // Fade in after hero fades out
@@ -71,7 +77,13 @@ export default function Header() {
           className={`hidden md:flex gap-8 font-sans text-xl hover:cursor-pointer ${
             darkBackgrounds.includes(location.pathname)
               ? "bg-zinc-900/40 backdrop-blur-sm rounded-2xl px-4 py-2"
-              : ""
+              : location.pathname === "/"
+              ? ""
+              : location.pathname === "/godaddy"
+              ? "bg-[#F0F1DC]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+              : location.pathname === "/ads"
+              ? "bg-[#eae6e1]/40 backdrop-blur-sm rounded-2xl px-4 py-2"
+              : "light-bg  backdrop-blur-sm rounded-2xl px-4 py-2"
           }`}
         >
           <Link
@@ -79,9 +91,9 @@ export default function Header() {
             to="/"
           >
             <p
-              className={`transition-all duration-300 font-light ${
+              className={`transition-all duration-300 ${
                 location.pathname === "/"
-                  ? "text-[#1c1c1c] font-semibold underline underline-offset-8"
+                  ? "text-[#1c1c1c] font-bold underline underline-offset-8"
                   : darkBackgrounds.includes(location.pathname)
                   ? "hover:text-white text-gray-200/90 hover:font-bold"
                   : "text-gray-800/90 hover:text-dark-green hover:font-bold"
@@ -95,7 +107,7 @@ export default function Header() {
             to="/play"
           >
             <p
-              className={`transition-all duration-300 font-light
+              className={`transition-all duration-300
               ${
                 darkBackgrounds.includes(location.pathname)
                   ? "hover:text-white text-gray-200/90"
@@ -103,8 +115,8 @@ export default function Header() {
               }
                 ${
                   location.pathname === "/play"
-                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-semibold underline underline-offset-8"
-                    : "hover:font-bold"
+                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-bold underline underline-offset-8"
+                    : "hover:font-bold font-light"
                 }
                 `}
             >
@@ -116,7 +128,7 @@ export default function Header() {
             to="/about"
           >
             <p
-              className={`transition-all duration-300 font-light
+              className={`transition-all duration-300
               ${
                 darkBackgrounds.includes(location.pathname)
                   ? "hover:text-white text-gray-200/90"
@@ -124,8 +136,8 @@ export default function Header() {
               }
                 ${
                   location.pathname === "/about"
-                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-semibold underline underline-offset-8"
-                    : "hover:font-bold"
+                    ? "text-[#1c1c1c] hover:text-[#1c1c1c] font-bold underline underline-offset-8"
+                    : "hover:font-bold font-light"
                 }
                 `}
             >
